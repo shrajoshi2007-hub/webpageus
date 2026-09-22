@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Student Registry</h1>
+      <p class="header-sub">Add each student's name, USN, and email. The roster updates as you go.</p>
+    </div>
+    <div class="count-block">
+      <div class="count-num" id="countNum">0</div>
+      <div class="count-label">students registered</div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Registration form -->
+    <div class="card">
+      <h2>Register a student</h2>
+      <form id="regForm" novalidate>
+        <div class="field">
+          <label for="nameInput">Full name</label>
+          <input id="nameInput" type="text" placeholder="e.g. Ananya Rao" autocomplete="off">
+          <div class="field-error" id="nameError"></div>
+        </div>
+        <div class="field">
+          <label for="usnInput">USN</label>
+          <input id="usnInput" type="text" placeholder="e.g. 1RV23CS045" autocomplete="off">
+          <div class="field-error" id="usnError"></div>
+        </div>
+        <div class="field">
+          <label for="emailInput">Email</label>
+          <input id="emailInput" type="email" placeholder="e.g. ananya.rao@college.edu" autocomplete="off">
+          <div class="field-error" id="emailError"></div>
+        </div>
+        <button type="submit">Add student</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+
+    <!-- Roster -->
+    <div class="card">
+      <div class="roster-head">
+        <div class="search-box">
+          <input id="searchInput" type="text" placeholder="Search by name, USN, or email...">
+        </div>
+backup.html [unix] (00:16 23/09/2026)                                                                                                                                                                     1,16 Top
+-- INSERT --
+
