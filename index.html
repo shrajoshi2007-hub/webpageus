@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark"><span class="dot"></span><span>YOURAPP</span></div>
+    <div class="card">
+      <div id="statusBox"></div>
+      <h1>Welcome.</h1>
+      <p class="home-lede">Sign up for a new account, or log back in if you're already with us.</p>
+      <div class="actions">
+        <a href="signup.html" class="btn btn-primary">Sign up</a>
+        <a href="login.html" class="btn btn-secondary">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Show a friendly confirmation if we just arrived back from signup or login
+    const params = new URLSearchParams(window.location.search);
+    const box = document.getElementById('statusBox');
+    const name = localStorage.getItem('userName');
+
+    if (params.get('signedup') === '1') {
+      box.innerHTML = '<div class="status">' +
+        'You\'re all set' + (name ? ', ' + escapeHtml(name) : '') + '. Your account has been created — log in whenever you\'re ready.' +
+        '</div>';
+    } else if (params.get('loggedin') === '1') {
+      box.innerHTML = '<div class="status">' +
+        'Welcome back' + (name ? ', ' + escapeHtml(name) : '') + '. You\'re logged in.' +
+        '</div>';
+    }
+
+    function escapeHtml(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+  </script>
+</body>
+</html>
